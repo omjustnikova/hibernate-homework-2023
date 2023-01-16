@@ -1,7 +1,10 @@
 package ru.hh.school.dao;
 
+import java.util.Collections;
+import java.util.List;
 import org.hibernate.SessionFactory;
 import ru.hh.school.entity.Employer;
+import ru.hh.school.entity.Vacancy;
 
 public class EmployerDao extends GenericDao {
 
@@ -18,7 +21,10 @@ public class EmployerDao extends GenericDao {
    */
   public Employer getEager(int employerId) {
     return getSession()
-        .createQuery("from Employer employer", Employer.class)
+        .createQuery("from Employer employer " +
+                        "join fetch employer.vacancies " +
+                        "where employer.id = :employerId", Employer.class)
+        .setParameter("employerId", employerId)
         .getSingleResult();
   }
 

@@ -1,5 +1,8 @@
 package ru.hh.school.util;
 
+import javax.persistence.EntityManager;
+import javax.swing.plaf.PanelUI;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
@@ -31,6 +34,10 @@ public class TransactionHelper {
             runnable.run();
             return null;
         });
+    }
+
+    public void update(Object o) {
+        sessionFactory.getCurrentSession().update(o);
     }
 
     private Optional<Transaction> beginTransaction() {
