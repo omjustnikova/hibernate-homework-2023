@@ -21,6 +21,10 @@ public class GenericDao {
     return getSession().get(clazz, id);
   }
 
+  public void update(Object object) {
+    getSession().update(object);
+  }
+
   public void save(Object object) {
     if (object == null) {
       return;
