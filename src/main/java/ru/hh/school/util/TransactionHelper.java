@@ -33,10 +33,6 @@ public class TransactionHelper {
         });
     }
 
-    public void update(Object o) {
-        sessionFactory.getCurrentSession().update(o);
-    }
-
     private Optional<Transaction> beginTransaction() {
         Transaction transaction = sessionFactory.getCurrentSession().getTransaction();
         if (transaction.isActive()) {
