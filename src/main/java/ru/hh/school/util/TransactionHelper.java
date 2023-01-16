@@ -1,8 +1,5 @@
 package ru.hh.school.util;
 
-import javax.persistence.EntityManager;
-import javax.swing.plaf.PanelUI;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 

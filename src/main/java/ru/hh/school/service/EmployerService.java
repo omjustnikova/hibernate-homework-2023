@@ -1,8 +1,5 @@
 package ru.hh.school.service;
 
-import javax.transaction.TransactionManager;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import ru.hh.school.util.TransactionHelper;
 import ru.hh.school.dao.EmployerDao;
 import ru.hh.school.dao.GenericDao;
